@@ -73,7 +73,9 @@
     #     assign Y axis label  
     p <- p + ylab("Hod dogs and buns (HDB) eaten")
     #     tune panel and axis color
-    p <- p + theme(panel.border = element_blank(), panel.grid = element_blank(), panel.background = element_blank(), axis.line = element_line(colour="black"))
+    p <- p + theme(panel.border = element_blank(),
+        panel.grid = element_blank(), panel.background = element_blank(),
+        axis.line = element_line(colour="black"))
     p
 ```
 
