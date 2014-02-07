@@ -18,21 +18,10 @@
  - 两种填充颜色的方案
 
    - 方案A: 所有bar填充相同颜色
-```R
-    fill_colors <- "red"
-```
+
 ![单色 课本代码](single-color-book.png)
 
    - 方案B: 所有bar根据冠军是否是美国填充不同颜色
-```R
-      for ( i in 1:length(hotdogs$Country) ) {
-        if (hotdogs$Country[i] == "United States") {
-          fill_colors <- c(fill_colors, "#821122")
-        } else {
-          fill_colors <- c(fill_colors, "#cccccc")
-        }
-      }
-```
 
 ![条件色 课本代码](conditional-color-book.png)
 
@@ -60,4 +49,27 @@
 
 ## 笔记 - 用ggplot2替代barplot
 
+为了绘制bar chart，课本使用barplot。参数说明
+ - col，如果是常数，所有bar填充相同颜色；如果是向量，所有bar填充向量相对应的颜色。
+ - xlab和ylab，X轴和Y轴的标签
+ - border=NA，不显示bar的边框
+ - space=0.3，每个bar前空白的比例是30%
+```R
+    barplot(hotdogs$Dogs.eaten, names.arg=hotdogs$Year,
+      col=fill_colors,
+      xlab="Year", ylab="Hod dogs and buns (HDB) eaten",
+      border=NA, space=0.3
+      )
+```
 
+使用ggplot2重写。
+```R
+    p <- ggplot(hotdogs, aes(x=Year, y=Dogs.eaten))
+    p <- p + geom_bar(stat="identity", fill=fill_colors, width=0.7)
+    #     NO need to assign X axis label for default is same as variable name
+    #     assign Y axis label  
+    p <- p + ylab("Hod dogs and buns (HDB) eaten")
+    #     tune panel and axis color
+    p <- p + theme(panel.border = element_blank(), panel.grid = element_blank(), panel.background = element_blank(), axis.line = element_line(colour="black"))
+    p
+```
