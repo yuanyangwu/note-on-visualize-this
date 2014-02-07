@@ -24,13 +24,9 @@
 
  - 两种填充颜色的方案
 
-   - 方案A: 所有bar填充相同颜色
-
-![单色 课本代码](single-color-book.png)
-
-   - 方案B: 所有bar根据冠军是否是美国填充不同颜色
-
-![条件色 课本代码](conditional-color-book.png)
+方案A: 所有bar填充相同颜色 | 方案B: 所有bar根据冠军是否是美国填充不同颜色
+---------------------------|---------------------------------------------
+![单色 课本代码](single-color-book.png) | ![条件色 课本代码](conditional-color-book.png)
 
 ## 笔记 - 用“向量化ifelse”替代“for + if/else”
 
@@ -80,3 +76,16 @@
     p <- p + theme(panel.border = element_blank(), panel.grid = element_blank(), panel.background = element_blank(), axis.line = element_line(colour="black"))
     p
 ```
+
+生成图比较
+ - 方案A: 所有bar填充相同颜色
+
+barplot | ggplot2
+--------|--------
+![单色 课本代码](single-color-book.png)|![单色 改编代码](single-color-mine.png)
+
+ - 方案B: 所有bar根据冠军是否是美国填充不同颜色
+
+barplot | ggplot2
+--------|--------
+![条件色 课本代码](conditional-color-book.png)|![单色 改编代码](conditional-color-mine.png)
