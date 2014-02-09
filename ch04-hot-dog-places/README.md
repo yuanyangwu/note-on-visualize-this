@@ -1,6 +1,10 @@
 # 第4章笔记 Stacked Bar Chart (hot-dog-places)
 
 **目录**
+ - [代码](#%E4%BB%A3%E7%A0%81)
+ - [课本内容简介](#%E8%AF%BE%E6%9C%AC%E5%86%85%E5%AE%B9%E7%AE%80%E4%BB%8B)
+ - [笔记 - 去除data.frame的header中讨厌的“首字母X”](#%E7%AC%94%E8%AE%B0---%E5%8E%BB%E9%99%A4dataframe%E7%9A%84header%E4%B8%AD%E8%AE%A8%E5%8E%8C%E7%9A%84%E9%A6%96%E5%AD%97%E6%AF%8Dx)
+ - [笔记 - 用ggplot2替代barplot画stacked bar chart](#%E7%AC%94%E8%AE%B0---%E7%94%A8ggplot2%E6%9B%BF%E4%BB%A3barplot%E7%94%BBstacked-bar-chart)
 
 ## 代码
  - 数据，[hot-dog-places.csv](hot-dog-places.csv)
