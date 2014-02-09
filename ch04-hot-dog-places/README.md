@@ -57,3 +57,23 @@ read.csv会自动为header添加首字母X。例如，把“2000”变成“X200
     # option 2: assign generated string names from numeric
     names(hot_dog_places) <- c(paste("200", 0:9, sep = ""), "2010")
 ```
+
+## 笔记 - 用ggplot2替代barplot画stacked bar chart
+
+- 课本代码先生成matrix，然后使用barplot
+
+```
+> hot_dog_matrix <- as.matrix(hot_dog_places)
+> hot_dog_matrix
+     2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010
+[1,]   25 50.0 50.5 44.5 53.5   49   54   66   59 68.0   54
+[2,]   24 31.0 26.0 30.5 38.0   37   52   63   59 64.5   43
+[3,]   22 23.5 25.5 29.5 32.0   32   37   49   42 55.0   37
+```
+
+```R
+    barplot(hot_dog_matrix, border=NA, space=0.25, ylim=c(0, 200),
+      xlab="Year", ylab="Hot dogs and buns (HDBs) eaten",
+      main="Hot Dog Eating Contest Results, 1980-2010")
+```
+
