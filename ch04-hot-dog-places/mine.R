@@ -21,7 +21,7 @@ func <- function(is.book) {
   
     # tranform places into data frame friendly to ggplot
     Count <- c(hot_dog_matrix)
-    Order <- gl(3,1,3*11)
+    Order <- gl(3, 1, 3*11)
     ns <- names(hot_dog_places)
     Year <- sort(rep(ns, 3))
     data <- data.frame(Year, Order, Count)
