@@ -60,7 +60,7 @@ read.csv会自动为header添加首字母X。例如，把“2000”变成“X200
 
 ## 笔记 - 用ggplot2替代barplot画stacked bar chart
 
-- 课本代码先生成matrix，然后使用barplot
+ - 课本代码先生成matrix，然后使用barplot
 
 ```
 > hot_dog_matrix <- as.matrix(hot_dog_places)
@@ -77,3 +77,42 @@ read.csv会自动为header添加首字母X。例如，把“2000”变成“X200
       main="Hot Dog Eating Contest Results, 1980-2010")
 ```
 
+ - 改编代码先生成data frame
+
+```R
+    # tranform places into data frame friendly to ggplot
+    Count <- c(hot_dog_matrix)
+    Place <- gl(3, 1, 3*11)
+    ns <- names(hot_dog_places)
+    Year <- sort(rep(ns, 3))
+    data <- data.frame(Year, Place, Count)
+```
+
+每条语句效果
+
+```
+TODO
+```
+
+ - 改编代码然后使用ggplot2
+
+```R
+    p <- ggplot(data, aes(x=Year, y=Count, fill=Place))
+    p <- p + geom_bar(stat="identity")
+
+    # title
+    p <- p + ggtitle("Hot Dog Eating Contest Results, 1980-2010")
+
+    # NO need to assign X axis label for default is same as variable name
+    # assign Y axis label  
+    p <- p + ylab("Hod dogs and buns (HDB) eaten")
+
+    # y limit
+    p <- p + ylim(0, 200)
+
+    # tune panel and axis color
+    p <- p + theme(panel.border = element_blank(),
+        panel.grid = element_blank(), panel.background = element_blank(),
+        axis.line = element_line(colour="black"))
+    p
+```
