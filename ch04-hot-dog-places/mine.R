@@ -36,12 +36,12 @@ func <- function(is.book) {
   
     # tranform places into data frame friendly to ggplot
     Count <- c(hot_dog_matrix)
-    Order <- gl(3, 1, 3*11)
+    Place <- gl(3, 1, 3*11)
     ns <- names(hot_dog_places)
     Year <- sort(rep(ns, 3))
-    data <- data.frame(Year, Order, Count)
+    data <- data.frame(Year, Place, Count)
 
-    p <- ggplot(data, aes(x=Year, y=Count, fill=Order))
+    p <- ggplot(data, aes(x=Year, y=Count, fill=Place))
     p <- p + geom_bar(stat="identity")
 
     # title
