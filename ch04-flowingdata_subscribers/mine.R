@@ -11,7 +11,9 @@ func <- function(is.book, is.point) {
     } else {
 
       p <- ggplot(subscribers, aes(x=1:length(Subscribers), y=Subscribers))
-      p <- p + geom_point(size = 3)
+
+      # shape #21 is hollow circle
+      p <- p + geom_point(size = 3, shape = 21)
 
       # y limit
       p <- p + ylim(0, 30000)
@@ -34,7 +36,10 @@ func <- function(is.book, is.point) {
     } else {
 
       p <- ggplot(subscribers, aes(x=1:length(Subscribers), y=Subscribers))
-      p <- p + geom_bar(stat="identity", width=0.1) + geom_point(size = 3)
+      p <- p + geom_bar(stat="identity", width=0.1)
+
+      # by default is shape #16 (solid circle)
+      p <- p + geom_point(size = 3)
 
       # y limit
       p <- p + ylim(0, 30000)
