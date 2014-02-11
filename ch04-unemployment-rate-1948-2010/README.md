@@ -1,6 +1,9 @@
 # 第4章笔记 LOESS Fit Chart (unemployment-rate-1948-2010)
 
 **目录**
+ - [代码](#%E4%BB%A3%E7%A0%81)
+ - [课本内容简介](#%E8%AF%BE%E6%9C%AC%E5%86%85%E5%AE%B9%E7%AE%80%E4%BB%8B)
+ - [笔记 - 用ggplot2替代plot+scatter.smooth画基于LOESS的拟合曲线](#%E7%AC%94%E8%AE%B0---%E7%94%A8ggplot2%E6%9B%BF%E4%BB%A3plotscattersmooth%E7%94%BB%E5%9F%BA%E4%BA%8Eloess%E7%9A%84%E6%8B%9F%E5%90%88%E6%9B%B2%E7%BA%BF)
 
 ## 代码
  - 数据，[unemployment-rate-1948-2010.csv](unemployment-rate-1948-2010.csv)
