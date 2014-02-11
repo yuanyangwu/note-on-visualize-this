@@ -8,3 +8,48 @@
  - 改编代码，[mine.R](mine.R)
 
 ## 课本内容简介
+ - 绘制历年失业率Scatter Point Chart并且画基于LOESS的拟合曲线
+
+课本代码 | 改编代码
+---------|---------
+![课本代码](book.png) | ![课本代码](mine.png)
+
+## 笔记 - 用ggplot2替代plot+scatter.smooth画基于LOESS的拟合曲线
+
+课本代码
+
+```R
+    # Plain scatter plot
+    plot(1:length(unemployment$Value), unemployment$Value)
+
+    scatter.smooth(x=1:length(unemployment$Value),
+      y=unemployment$Value, ylim=c(0,11), degree=2, col="#CCCCCC", span=0.5)
+```
+
+改编代码
+ - geom_point(size = 3, shape = 21, color = "#CCCCCC")，画Scatter Point Chart，并设置点圆点颜色
+ - stat_smooth(se = FALSE, color = "black", method = "loess", degree = 2, span = 0.5)，画基于LOESS的拟合曲线
+   - se = FALSE，不要画Confidence Interval
+   - method = "loess", degree = 2, span = 0.5，显示使用LOESS，并设置相关参数
+
+```R
+    p <- ggplot(unemployment, aes(x=1:length(Value), y=Value))
+
+    # shape #21 is hollow circle
+    p <- p + geom_point(size = 3, shape = 21, color = "#CCCCCC")
+
+    # se = FALSE hides confidence interval
+    p <- p + stat_smooth(se = FALSE, color = "black", method = "loess", degree = 2, span = 0.5)
+
+    # y limit
+    p <- p + ylim(0, 11)
+
+    # x label
+    p <- p + xlab("Index")
+
+    # tune panel and axis color
+    p <- p + theme(panel.border = element_blank(),
+        panel.grid = element_blank(), panel.background = element_blank(),
+        axis.line = element_line(colour="black"))
+    p
+```
