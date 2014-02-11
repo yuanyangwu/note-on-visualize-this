@@ -1,6 +1,10 @@
 # 第4章笔记 Scatter Point Chart和Candle Stick Chart (flowingdata_subscribers)
 
 **目录**
+ - [代码](#%E4%BB%A3%E7%A0%81)
+ - [课本内容简介](#%E8%AF%BE%E6%9C%AC%E5%86%85%E5%AE%B9%E7%AE%80%E4%BB%8B)
+ - [笔记 - 用ggplot2替代plot画Scatter Point Chart](#%E7%AC%94%E8%AE%B0---%E7%94%A8ggplot2%E6%9B%BF%E4%BB%A3plot%E7%94%BBscatter-point-chart)
+ - [笔记 - 用ggplot2替代plot画Candle Stick Chart](#%E7%AC%94%E8%AE%B0---%E7%94%A8ggplot2%E6%9B%BF%E4%BB%A3plot%E7%94%BBcandle-stick-chart)
 
 ## 代码
  - 数据，[flowingdata_subscribers.csv](flowingdata_subscribers.csv)
