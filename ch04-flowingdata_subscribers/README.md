@@ -1,4 +1,4 @@
-# 第4章笔记 Scatterplot (hot-dog-places)
+# 第4章笔记 Scatter Plot (flowingdata_subscribers)
 
 **目录**
 
